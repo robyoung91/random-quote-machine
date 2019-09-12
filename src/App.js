@@ -27,7 +27,6 @@ class App extends Component {
   }
 
   handleClick = () => {
-    console.log('Howdy');
     this.newQuote();
     this.changeBackground();
   }
@@ -55,7 +54,9 @@ class App extends Component {
           <p id='text' style={{color: this.state.backgroundColor, transition: 'all 1s',}}>"{this.state.text}"</p>
           <p id='author' style={{color: this.state.backgroundColor, transition: 'all 1s',}}>- {this.state.author}</p>
           <div id='buttons'>
-            <button id='tweet-quote' style={{backgroundColor: this.state.backgroundColor, transition: 'all 1s',}}></button>
+            <a id="tweet-quote" title="Tweet this quote!" href='https://twitter.com/intent/tweet?text=' style={{backgroundColor: this.state.backgroundColor, transition: 'all 1s',}}>
+              <i id='tweet-icon' className="fab fa-twitter twitter-icon" />
+            </a>
             <button id='new-quote' style={{backgroundColor: this.state.backgroundColor, transition: 'all 1s',}} onClick={this.handleClick}>New Quote</button>
           </div>
         </div>

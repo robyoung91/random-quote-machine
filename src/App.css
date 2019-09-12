@@ -76,8 +76,9 @@ html, body {
   flex-direction: column;
   align-items: flex-end;
   background-color: white;
-  padding: 80px;
+  padding: 4em;
   border-radius: 10px;
+  transition: all 1s;
 }
 
 #text {
@@ -89,6 +90,7 @@ html, body {
 #author {
   font-size: 1.5em;
   font-family: 'Satisfy', cursive;
+  margin-top: 20px;
 }
 
 #buttons {
@@ -99,15 +101,26 @@ html, body {
   margin-top: 3em;
 }
 
-#tweet-quote {
-  
-}
 
+/*#tweet-quote {
+  width: 50px;
+  height: 50px;
+}
+*/
 #new-quote {
   color: white;
-  font-size: 0.75em;
+  font-size: 0.9em;
   font-weight: bold;
   border-radius: 5px;
   height: 3em;
   width: auto;
+  text-align: center;
+}
+
+#new-quote:focus {
+  outline:0;
+}
+
+#tweet-icon {
+  color: black;
 }
