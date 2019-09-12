@@ -52,10 +52,12 @@ class App extends Component {
     return (
       <div id='background' style={{backgroundColor: this.state.backgroundColor, transition: 'all 1s',}}>
         <div id='quote-box'>
-          <p id='text' style={{color: this.state.backgroundColor, transition: 'all 1s',}}>{this.state.text}</p>
-          <p id='author' style={{color: this.state.backgroundColor, transition: 'all 1s',}}>{this.state.author}</p>
-          <button id='new-quote' onClick={this.handleClick}>New Quote</button>
-          <button id='tweet-quote'></button>
+          <p id='text' style={{color: this.state.backgroundColor, transition: 'all 1s',}}>"{this.state.text}"</p>
+          <p id='author' style={{color: this.state.backgroundColor, transition: 'all 1s',}}>- {this.state.author}</p>
+          <div id='buttons'>
+            <button id='tweet-quote' style={{backgroundColor: this.state.backgroundColor, transition: 'all 1s',}}></button>
+            <button id='new-quote' style={{backgroundColor: this.state.backgroundColor, transition: 'all 1s',}} onClick={this.handleClick}>New Quote</button>
+          </div>
         </div>
       </div>
     )
