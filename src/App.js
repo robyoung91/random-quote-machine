@@ -40,14 +40,19 @@ class App extends Component {
   };
 
   handleClickPrev = () => {
-    this.prevQuote();
-    this.changeBackground();
-    this.changeFont();
+    if (this.state.history.length !== 1) {
+      this.prevQuote();
+      this.changeBackground();
+      this.changeFont();
+    };
   };
 
   newQuote = () => {
  
-    let newQuoteIndex = Math.floor(Math.random() * Math.floor(this.state.quotes.length));
+    let newQuoteIndex = this.state.quoteIndex;
+    while (this.state.quoteIndex === newQuoteIndex) {
+      newQuoteIndex = Math.floor(Math.random() * Math.floor(this.state.quotes.length));
+    };
 
     this.setState({
       history: this.state.history.concat(newQuoteIndex),
@@ -124,6 +129,7 @@ class App extends Component {
             </div>
           </div>
         </div>
+        <footer>by Rob Young</footer>
       </div>
     )
   };
